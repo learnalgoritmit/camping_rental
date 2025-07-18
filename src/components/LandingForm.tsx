@@ -12,7 +12,6 @@ export default function LandingForm({ onValidityChange }: { onValidityChange?: (
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [touched, setTouched] = useState({ phone: false, email: false });
-  const [apiError, setApiError] = useState<string | null>(null);
   const router = useRouter();
   const { setUser, order } = useOrder();
   const t = useTranslations();
@@ -37,7 +36,6 @@ export default function LandingForm({ onValidityChange }: { onValidityChange?: (
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (formValid) {
-      setApiError(null);
       try {
         const res = await fetch('/api/login', {
           method: 'POST',
