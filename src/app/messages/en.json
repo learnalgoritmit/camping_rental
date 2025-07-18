@@ -1,0 +1,161 @@
+{
+  "step": {
+    "contact": "Contact",
+    "booking": "Booking",
+    "addons": "Add-ons",
+    "finalize": "Finalize",
+    "tent": "Tent",
+    "summary": "Summary"
+  },
+  "label": {
+    "phone": "Phone Number",
+    "email": "Email",
+    "dateRange": "Date Range",
+    "adults": "Number of Adults",
+    "kids": "Number of Kids",
+    "addAccessories": "Add Accessories:",
+    "customMessage": "Add a custom message (optional)",
+    "to": "to",
+    "totalOrder": "Total for Order:",
+    "total": "Total:",
+    "cartSummary": "Your Cart",
+    "noAccessories": "No accessories in your cart."
+  },
+  "placeholder": {
+    "phone": "050-1234567",
+    "email": "you@email.com",
+    "customMessage": "Anything else?"
+  },
+  "button": {
+    "next": "Next",
+    "back": "Back",
+    "sendWhatsapp": "Send order via WhatsApp",
+    "viewCart": "View Cart / Checkout",
+    "backToProducts": "Back to products"
+  },
+  "error": {
+    "invalidPhone": "Please enter a valid Israeli phone number (e.g., 0501234567)",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidDateRange": "Please select a valid date range",
+    "minAdults": "At least 1 adult is required (max 20)",
+    "maxKids": "Number of kids must be 0-20"
+  },
+  "products": {
+    "campingChair": {
+      "name": "Camping Chair",
+      "description": "Comfortable foldable chair for relaxing by the campfire."
+    },
+    "sleepingBag": {
+      "name": "Sleeping Bag",
+      "description": "Warm and cozy sleeping bag for chilly nights."
+    },
+    "portableGrill": {
+      "name": "Portable Grill",
+      "description": "Compact grill for outdoor cooking and BBQs."
+    },
+    "lantern": {
+      "name": "Lantern",
+      "description": "LED lantern to light up your tent and campsite."
+    },
+    "coffeeKit": {
+      "name": "Coffee Kit",
+      "description": "Everything you need for fresh coffee in the wild."
+    },
+    "coolerBox": {
+      "name": "Cooler Box",
+      "description": "Keep your food and drinks cold all day."
+    },
+    "campingTable": {
+      "name": "Camping Table",
+      "description": "Foldable table for meals and games."
+    },
+    "hammock": {
+      "name": "Hammock",
+      "description": "Relax between the trees with a sturdy hammock."
+    },
+    "firstAidKit": {
+      "name": "First Aid Kit",
+      "description": "Essential supplies for minor injuries and emergencies."
+    },
+    "inflatableMattress": {
+      "name": "Inflatable Mattress",
+      "description": "Extra comfort for a good night's sleep."
+    },
+    "portableShower": {
+      "name": "Portable Shower",
+      "description": "Stay fresh with a solar-heated portable shower."
+    },
+    "firewoodBundle": {
+      "name": "Firewood Bundle",
+      "description": "Pre-chopped firewood for your campfire."
+    },
+    "campingStove": {
+      "name": "Camping Stove",
+      "description": "Gas stove for quick and easy meals."
+    },
+    "boardGames": {
+      "name": "Board Games",
+      "description": "Classic games for fun evenings in the tent."
+    },
+    "fishingKit": {
+      "name": "Fishing Kit",
+      "description": "Basic fishing gear for lakeside camping."
+    },
+    "picnicBlanket": {
+      "name": "Picnic Blanket",
+      "description": "Soft, waterproof blanket for picnics and lounging."
+    },
+    "tentLightString": {
+      "name": "Tent Light String",
+      "description": "String lights to create a magical tent atmosphere."
+    },
+    "portableSpeaker": {
+      "name": "Portable Speaker",
+      "description": "Bluetooth speaker for music at your campsite."
+    },
+    "bugSpray": {
+      "name": "Bug Spray",
+      "description": "Keep mosquitoes and bugs away."
+    },
+    "marshmallowKit": {
+      "name": "Marshmallow Kit",
+      "description": "Marshmallows, sticks, and chocolate for s'mores!"
+    },
+    "loading": "Loading products...",
+    "noProducts": "No products found.",
+    "noImage": "No Image",
+    "limitedDrop": "Limited Vision Drop",
+    "includedTent": "Included in every booking",
+    "addToCart": "Add to cart",
+    "addedToCart": "{name} added to cart!",
+    "errorLoading": "Error loading products",
+    "whatMoreCanWeOffer": "What more can we offer?"
+  },
+  "tent": {
+    "description": "Spacious, weather-resistant tent for up to 4 people. Included in every booking."
+  },
+  "landing": {
+    "heroTitle": "Buckle Up for Family Time",
+    "heroSubtitle": "We’ve got your camping covered. Just show up and have fun—tents, gear, and all the accessories you could dream of are waiting for you.",
+    "getStarted": "Get Started",
+    "whatWeDoTitle": "You just go have fun. We take care of everything else.",
+    "whatWeDoDescription": "We rent out high-quality tents and every camping accessory you could possibly need. No stress, no hassle—just pack your family and go. Wake up to birdsong, share stories by the fire, and watch your kids explore the world with wonder.",
+    "testimonialsTitle": "What Our Clients Say",
+    "testimonials": {
+      "noaLevi": { "name": "Noa Levi", "quote": "Everything was ready for us, and the tent was super comfy. The kids had a blast!" },
+      "amitCohen": { "name": "Amit Cohen", "quote": "We just showed up and started having fun. No stress, no packing. Highly recommended!" },
+      "danaBar": { "name": "Dana Bar", "quote": "The accessories were top-notch and the service was amazing. Will book again!" },
+      "yossiPeretz": { "name": "Yossi Peretz", "quote": "Best family trip ever. Everything was so easy and smooth." }
+    },
+    "reachOutTitle": "Reach Out",
+    "reachOutDescription": "Have a question or want to book? Send us a WhatsApp message and we’ll get back to you soon!",
+    "yourName": "Your Name",
+    "namePlaceholder": "Enter your name",
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "sendWhatsapp": "Send via WhatsApp",
+    "heroImageAlt": "Family camping in nature",
+    "whatsappPrefill": "Hi! My name is {name} and I would like to know more. {message}",
+    "bookYourTent": "Book Your Tent!"
+  }
+} 

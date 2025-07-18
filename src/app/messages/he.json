@@ -1,0 +1,161 @@
+{
+  "step": {
+    "contact": "פרטי קשר",
+    "booking": "הזמנה",
+    "addons": "תוספות",
+    "finalize": "סיום",
+    "tent": "אוהל",
+    "summary": "סיכום"
+  },
+  "label": {
+    "phone": "מספר טלפון",
+    "email": "אימייל",
+    "dateRange": "טווח תאריכים",
+    "adults": "מספר מבוגרים",
+    "kids": "מספר ילדים",
+    "addAccessories": "הוספת אביזרים:",
+    "customMessage": "הוספת הודעה אישית (לא חובה)",
+    "to": "עד",
+    "totalOrder": "סך הכל להזמנה:",
+    "total": "סך הכל:",
+    "cartSummary": "העגלה שלך",
+    "noAccessories": "אין אביזרים בעגלה שלך."
+  },
+  "placeholder": {
+    "phone": "050-1234567",
+    "email": "you@email.com",
+    "customMessage": "משהו נוסף?"
+  },
+  "button": {
+    "next": "הבא",
+    "back": "חזור",
+    "sendWhatsapp": "שלח הזמנה ב-WhatsApp",
+    "viewCart": "מעבר לעגלה / לתשלום",
+    "backToProducts": "חזרה למוצרים"
+  },
+  "error": {
+    "invalidPhone": "נא להזין מספר טלפון ישראלי תקין (לדוג' 0501234567)",
+    "invalidEmail": "נא להזין כתובת אימייל תקינה",
+    "invalidDateRange": "נא לבחור טווח תאריכים תקין",
+    "minAdults": "נדרש לפחות מבוגר אחד (מקסימום 20)",
+    "maxKids": "מספר הילדים חייב להיות בין 0 ל-20"
+  },
+  "products": {
+    "campingChair": {
+      "name": "כיסא קמפינג",
+      "description": "כיסא מתקפל ונוח למנוחה ליד המדורה."
+    },
+    "sleepingBag": {
+      "name": "שק שינה",
+      "description": "שק שינה חמים ונעים ללילות קרירים."
+    },
+    "portableGrill": {
+      "name": "מנגל נייד",
+      "description": "מנגל קומפקטי לבישול ואירוח בשטח."
+    },
+    "lantern": {
+      "name": "פנס",
+      "description": "פנס לד להארת האוהל והקמפינג."
+    },
+    "coffeeKit": {
+      "name": "ערכת קפה",
+      "description": "כל מה שצריך לקפה טרי בטבע."
+    },
+    "coolerBox": {
+      "name": "צידנית",
+      "description": "שומרת על האוכל והשתייה קרים לאורך כל היום."
+    },
+    "campingTable": {
+      "name": "שולחן קמפינג",
+      "description": "שולחן מתקפל לארוחות ומשחקים."
+    },
+    "hammock": {
+      "name": "ערסל",
+      "description": "להירגע בין העצים עם ערסל עמיד."
+    },
+    "firstAidKit": {
+      "name": "ערכת עזרה ראשונה",
+      "description": "ציוד חיוני לפציעות קלות ומקרי חירום."
+    },
+    "inflatableMattress": {
+      "name": "מזרן מתנפח",
+      "description": "נוחות נוספת לשינה טובה בלילה."
+    },
+    "portableShower": {
+      "name": "מקלחת ניידת",
+      "description": "להתרענן עם מקלחת ניידת מחוממת בשמש."
+    },
+    "firewoodBundle": {
+      "name": "חבילת עצים למדורה",
+      "description": "עצים קצוצים מראש למדורה שלך."
+    },
+    "campingStove": {
+      "name": "כירת קמפינג",
+      "description": "כירת גז לארוחות מהירות וקלות."
+    },
+    "boardGames": {
+      "name": "משחקי קופסה",
+      "description": "משחקים קלאסיים לערבים מהנים באוהל."
+    },
+    "fishingKit": {
+      "name": "ערכת דיג",
+      "description": "ציוד דיג בסיסי לקמפינג ליד אגם."
+    },
+    "picnicBlanket": {
+      "name": "שמיכת פיקניק",
+      "description": "שמיכה רכה ועמידה במים לפיקניקים ומנוחה."
+    },
+    "tentLightString": {
+      "name": "שרשרת אורות לאוהל",
+      "description": "אורות ליצירת אווירה קסומה באוהל."
+    },
+    "portableSpeaker": {
+      "name": "רמקול נייד",
+      "description": "רמקול בלוטות' למוזיקה בקמפינג."
+    },
+    "bugSpray": {
+      "name": "תרסיס נגד יתושים",
+      "description": "מרחיק יתושים וחרקים."
+    },
+    "marshmallowKit": {
+      "name": "ערכת מרשמלו",
+      "description": "מרשמלו, שיפודים ושוקולד לס'מורס!"
+    },
+    "loading": "טוען מוצרים...",
+    "noProducts": "לא נמצאו מוצרים.",
+    "noImage": "אין תמונה",
+    "limitedDrop": "מהדורה מוגבלת",
+    "includedTent": "כלול בכל הזמנה",
+    "addToCart": "הוסף לעגלה",
+    "addedToCart": "{name} נוסף לעגלה!",
+    "errorLoading": "שגיאה בטעינת מוצרים",
+    "errorLoading": "שגיאה בטעינת מוצרים"
+  },
+  "tent": {
+    "description": "אוהל מרווח ועמיד בפני מזג אוויר עד 4 אנשים. כלול בכל הזמנה."
+  },
+  "landing": {
+    "heroTitle": "צאו לדרך – המשפחה קודמת לכל",
+    "heroSubtitle": "אנחנו דואגים לכל ציוד הקמפינג. אתם רק מגיעים ונהנים – אוהלים, ציוד וכל האביזרים שחלמתם עליהם מחכים לכם.",
+    "getStarted": "להתחיל עכשיו",
+    "whatWeDoTitle": "אתם רק באים ליהנות. אנחנו דואגים לכל השאר.",
+    "whatWeDoDescription": "אנחנו משכירים אוהלים איכותיים וכל אביזר קמפינג שתוכלו לדמיין. בלי לחץ, בלי התעסקות – רק לארוז את המשפחה ולצאת. תתעוררו לציוץ ציפורים, תספרו סיפורים סביב המדורה ותראו את הילדים מגלים עולם.",
+    "testimonialsTitle": "מה הלקוחות שלנו אומרים",
+    "testimonials": {
+      "noaLevi": { "name": "נועה לוי", "quote": "הכול היה מוכן בשבילנו, והאוהל היה ממש נוח. הילדים נהנו בטירוף!" },
+      "amitCohen": { "name": "עמית כהן", "quote": "פשוט הגענו והתחלנו ליהנות. בלי לחץ, בלי לארוז. ממליץ בחום!" },
+      "danaBar": { "name": "דנה בר", "quote": "האביזרים היו ברמה גבוהה והשירות היה מדהים. נזמין שוב!" },
+      "yossiPeretz": { "name": "יוסי פרץ", "quote": "הטיול משפחתי הכי טוב שהיה לנו. הכול היה כל כך פשוט וקל." }
+    },
+    "reachOutTitle": "דברו איתנו",
+    "reachOutDescription": "יש לכם שאלה או רוצים להזמין? שלחו לנו הודעה ב-WhatsApp ונחזור אליכם בהקדם!",
+    "yourName": "השם שלך",
+    "namePlaceholder": "הכניסו את שמכם",
+    "message": "הודעה",
+    "messagePlaceholder": "איך נוכל לעזור לכם?",
+    "sendWhatsapp": "שלח ב-WhatsApp",
+    "heroImageAlt": "משפחה בקמפינג בטבע",
+    "whatsappPrefill": "היי! קוראים לי {name} ואני רוצה לקבל פרטים נוספים. {message}",
+    "bookYourTent": "הזמינו את האוהל שלכם!"
+  }
+} 
