@@ -39,26 +39,21 @@ export default function LandingForm({ onValidityChange }: { onValidityChange?: (
     if (formValid) {
       setApiError(null);
       try {
-        const res = await fetch('/api/user-contact', {
+        const res = await fetch('/api/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ phone, email })
         });
         if (!res.ok) {
           const data = await res.json();
-          setApiError(data.error || 'Failed to save contact.');
-          return;
+          console.error('Login error:', data.error || 'Failed to login.');
+        } else {
+          setUser({ phone, email });
         }
-        setUser({ phone, email });
-        // Send SMS notification
-        await fetch('/api/send-login-sms', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ phone, email })
-        });
+      } catch (err) {
+        console.error('Network error:', err);
+      } finally {
         router.push(`/booking`);
-      } catch {
-        setApiError('Network error. Please try again.');
       }
     }
   }
@@ -133,7 +128,6 @@ export default function LandingForm({ onValidityChange }: { onValidityChange?: (
       >
         {t('button.next')}
       </button>
-      {apiError && <div className="text-red-500 text-sm mt-2">{apiError}</div>}
     </form>
   );
 }
