@@ -44,7 +44,7 @@ export default function CheckoutSummary() {
           </div>
           {order.accessories.map((item) => (
             <div key={item.product.id} className="flex justify-between">
-              <span>{item.product.name} x{item.quantity}</span>
+              <span>{(item.product.name || '').replace(/"/g, "&quot;")} x{item.quantity}</span>
               <span className="text-green-700">₪{item.product.price * item.quantity}</span>
             </div>
           ))}

@@ -202,7 +202,7 @@ export default function ProductSelector() {
                 }}
                 className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
               />
-              <span>{t(`products.${product.key}.name`)}</span>
+              <span>{(t(`products.${product.key}.name`) || '').replace(/"/g, "&quot;")}</span>
             </div>
             <div className="flex items-center gap-2">
               <span>{product.price} {t("productSelector.currency")}</span>
