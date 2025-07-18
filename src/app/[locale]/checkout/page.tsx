@@ -1,3 +1,4 @@
+"use client";
 import CheckoutSummary from "@/components/CheckoutSummary";
 import BackgroundWrapper from "@/components/BackgroundWrapper";
 import { useParams } from "next/navigation";
