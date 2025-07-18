@@ -2,7 +2,7 @@
 
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
-import { motion } from "framer-motion";
+import { useSpring, animated } from "@react-spring/web";
 import { useOrder } from '../context/OrderContext';
 import { useTranslations } from 'next-intl';
 
@@ -26,9 +26,11 @@ export default function CheckoutSummary() {
 
   const t = useTranslations();
 
+  const fadeInUp = useSpring({ from: { opacity: 0, y: 20 }, to: { opacity: 1, y: 0 }, delay: 100 });
+
   return (
-    <motion.div className="flex flex-col gap-6 w-full" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+    <animated.div className="flex flex-col gap-6 w-full" style={fadeInUp}>
+      <animated.div style={fadeInUp}>
         <Card className="p-4 flex flex-col gap-2 bg-green-50">
           <div className="flex justify-between items-center">
             <span className="font-semibold">{order.tent.name}</span>
@@ -51,8 +53,8 @@ export default function CheckoutSummary() {
             <span className="text-green-800">₪{total}</span>
           </div>
         </Card>
-      </motion.div>
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="border-t pt-4 mt-4 flex flex-row gap-2 w-full">
+      </animated.div>
+      <animated.div style={fadeInUp} className="border-t pt-4 mt-4 flex flex-row gap-2 w-full">
         <a
           href={`https://wa.me/${whatsappNumber}?text=${message}`}
           target="_blank"
@@ -63,7 +65,7 @@ export default function CheckoutSummary() {
             {t('button.sendWhatsapp')}
           </Button>
         </a>
-      </motion.div>
-    </motion.div>
+      </animated.div>
+    </animated.div>
   );
 } 

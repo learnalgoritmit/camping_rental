@@ -3,8 +3,8 @@ import { useState, useEffect, useMemo } from "react";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Button } from "./ui/button";
-import { motion } from "framer-motion";
-import { useRouter, useParams } from "next/navigation";
+import { useSpring, animated } from "@react-spring/web";
+import { useRouter } from "next/navigation";
 import { useOrder } from '../context/OrderContext';
 import { useTranslations } from 'next-intl';
 
@@ -24,8 +24,7 @@ export default function BookingForm() {
   const dateValid = dateRange.startDate && dateRange.endDate && dateRange.endDate >= dateRange.startDate;
 
   const router = useRouter();
-  const params = useParams();
-  const locale = typeof params.locale === "string" ? params.locale : Array.isArray(params.locale) ? params.locale[0] : "en";
+  // const locale = typeof params.locale === "string" ? params.locale : Array.isArray(params.locale) ? params.locale[0] : "en";
 
   const { setDates, order } = useOrder();
   const t = useTranslations();
@@ -50,9 +49,13 @@ export default function BookingForm() {
     }
   };
 
+  const fadeInUp1 = useSpring({ from: { opacity: 0, y: 20 }, to: { opacity: 1, y: 0 }, delay: 100 });
+  const fadeInUp2 = useSpring({ from: { opacity: 0, y: 20 }, to: { opacity: 1, y: 0 }, delay: 200 });
+  const fadeInUp3 = useSpring({ from: { opacity: 0, y: 20 }, to: { opacity: 1, y: 0 }, delay: 300 });
+
   return (
     <form className="flex flex-col gap-6 w-full max-w-md mx-auto" autoComplete="off" noValidate onSubmit={handleSubmit}>
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="flex flex-col gap-2">
+      <animated.div style={fadeInUp1} className="flex flex-col gap-2">
         <Label className="font-medium text-gray-800">{t('label.dateRange')}</Label>
         <div className="flex gap-2">
           <Input
@@ -78,12 +81,12 @@ export default function BookingForm() {
           />
         </div>
         {touched.date && !dateValid && (
-          <motion.span id="date-error" className="text-red-500 text-xs mt-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <animated.span id="date-error" className="text-red-500 text-xs mt-1">
             {t('error.invalidDateRange')}
-          </motion.span>
+          </animated.span>
         )}
-      </motion.div>
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="flex flex-col gap-2">
+      </animated.div>
+      <animated.div style={fadeInUp2} className="flex flex-col gap-2">
         <Label htmlFor="people" className="font-medium text-gray-800">{t('label.adults')}</Label>
         <Input
           id="people"
@@ -103,16 +106,16 @@ export default function BookingForm() {
           }
         />
         {touched.people && !peopleValid && (
-          <motion.span id="people-error" className="text-red-500 text-xs mt-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <animated.span id="people-error" className="text-red-500 text-xs mt-1">
             {t('error.minAdults')}
-          </motion.span>
+          </animated.span>
         )}
-      </motion.div>
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="w-full">
+      </animated.div>
+      <animated.div style={fadeInUp3} className="w-full">
         <Button type="submit" className="w-full text-lg py-3 flex justify-center items-center gap-2 transition-transform active:scale-95 focus-visible:ring-4 focus-visible:ring-green-300" aria-label="Book your tent" disabled={!(dateValid && peopleValid)}>
           {t('button.next')}
         </Button>
-      </motion.div>
+      </animated.div>
     </form>
   );
 } 

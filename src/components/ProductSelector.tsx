@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
-import { motion, AnimatePresence } from "framer-motion";
+import { useSpring, animated } from "@react-spring/web";
 import { LuPlus, LuMinus } from "react-icons/lu";
 import { useRouter, useParams } from "next/navigation";
 import React from 'react';
@@ -162,6 +162,8 @@ export default function ProductSelector() {
     router.push(`/checkout/${params.id}`);
   };
 
+  const fadeInUp = useSpring({ from: { opacity: 0, y: 20 }, to: { opacity: 1, y: 0 }, delay: 100 });
+
   return (
     <div className="flex flex-col gap-4">
       <Card className="p-4">
@@ -182,76 +184,71 @@ export default function ProductSelector() {
 
       <Card className="p-4">
         <h3 className="text-xl font-semibold mb-2">{t("productSelector.products")}</h3>
-        <AnimatePresence>
-          {PRODUCTS.map((product) => (
-            <motion.div
-              key={product.id}
-              layout
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="flex items-center justify-between py-2 border-b last:border-b-0"
-            >
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  checked={selected[product.id] > 0}
-                  onChange={(e) => {
-                    setSelected(prev => ({
+        {PRODUCTS.map((product) => (
+          <animated.div
+            key={product.id}
+            style={fadeInUp}
+            className="flex items-center justify-between py-2 border-b last:border-b-0"
+          >
+            <div className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                checked={selected[product.id] > 0}
+                onChange={(e) => {
+                  setSelected(prev => ({
+                    ...prev,
+                    [product.id]: e.target.checked ? 1 : 0,
+                  }));
+                }}
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              />
+              <span>{t(`products.${product.key}.name`)}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span>{product.price} {t("productSelector.currency")}</span>
+              {quantityControlMode === 'stepper' && (
+                <div className="flex items-center">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setSelected(prev => ({
                       ...prev,
-                      [product.id]: e.target.checked ? 1 : 0,
-                    }));
-                  }}
-                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                />
-                <span>{t(`products.${product.key}.name`)}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span>{product.price} {t("productSelector.currency")}</span>
-                {quantityControlMode === 'stepper' && (
-                  <div className="flex items-center">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setSelected(prev => ({
-                        ...prev,
-                        [product.id]: Math.max(0, (prev[product.id] || 0) - 1),
-                      }))}
-                      className="h-7 w-7 p-0"
-                    >
-                      <LuMinus />
-                    </Button>
-                    <span className="h-7 w-7 flex items-center justify-center">
-                      {selected[product.id] || 0}
-                    </span>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setSelected(prev => ({
-                        ...prev,
-                        [product.id]: (prev[product.id] || 0) + 1,
-                      }))}
-                      className="h-7 w-7 p-0"
-                    >
-                      <LuPlus />
-                    </Button>
-                  </div>
-                )}
-                {quantityControlMode === 'inline' && (
-                  <input
-                    type="number"
-                    value={selected[product.id] || 0}
-                    onChange={(e) => setSelected(prev => ({
-                      ...prev,
-                      [product.id]: Math.max(0, parseInt(e.target.value) || 0),
+                      [product.id]: Math.max(0, (prev[product.id] || 0) - 1),
                     }))}
-                    className="w-12 h-7 text-center border border-gray-300 rounded"
-                  />
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+                    className="h-7 w-7 p-0"
+                  >
+                    <LuMinus />
+                  </Button>
+                  <span className="h-7 w-7 flex items-center justify-center">
+                    {selected[product.id] || 0}
+                  </span>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setSelected(prev => ({
+                      ...prev,
+                      [product.id]: (prev[product.id] || 0) + 1,
+                    }))}
+                    className="h-7 w-7 p-0"
+                  >
+                    <LuPlus />
+                  </Button>
+                </div>
+              )}
+              {quantityControlMode === 'inline' && (
+                <input
+                  type="number"
+                  value={selected[product.id] || 0}
+                  onChange={(e) => setSelected(prev => ({
+                    ...prev,
+                    [product.id]: Math.max(0, parseInt(e.target.value) || 0),
+                  }))}
+                  className="w-12 h-7 text-center border border-gray-300 rounded"
+                />
+              )}
+            </div>
+          </animated.div>
+        ))}
       </Card>
     </div>
   );

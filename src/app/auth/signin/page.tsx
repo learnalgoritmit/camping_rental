@@ -2,14 +2,12 @@
 import Image from 'next/image';
 import { LuPhone, LuMail } from 'react-icons/lu';
 import { useState } from 'react';
-import { useRouter, useParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const router = useRouter();
-  const params = useParams();
-  const locale = typeof params.locale === "string" ? params.locale : Array.isArray(params.locale) ? params.locale[0] : "en";
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();

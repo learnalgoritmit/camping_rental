@@ -3,7 +3,7 @@
 import * as React from "react"
 import * as LabelPrimitive from "@radix-ui/react-label"
 import { cn } from "@/lib/utils"
-import { motion } from "framer-motion"
+import { animated } from "@react-spring/web";
 
 function Label({
   className,
@@ -18,9 +18,9 @@ function Label({
       )}
       {...props}
     >
-      <motion.span initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+      <animated.span>
         {props.children}
-      </motion.span>
+      </animated.span>
     </LabelPrimitive.Root>
   )
 }

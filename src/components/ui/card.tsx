@@ -2,42 +2,13 @@
 
 import * as React from "react"
 import { cn } from "@/lib/utils"
-import { motion } from "framer-motion"
+import { animated } from "@react-spring/web";
 
-// Utility to omit specific keys from an object
-function omit<T extends object, K extends keyof T>(obj: T, keys: K[]): Omit<T, K> {
-  const clone = { ...obj };
-  for (const key of keys) {
-    delete clone[key];
-  }
-  return clone;
-}
-
-const Card = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>(
-  ({ className, ...props }, ref) => {
-    return (
-      <motion.div
-        data-slot="card"
-        ref={ref}
-        className={cn(
-          "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
-          className
-        )}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        {...omit(props, [
-          "onDrag", "onDragStart", "onDragEnd", "onDragOver", "onDragEnter", "onDragLeave", "onDrop",
-          "onAnimationStart", "onAnimationEnd", "onTransitionEnd"
-        ])}
-      />
-    );
-  }
-)
-Card.displayName = "Card"
-
-export default Card;
-export { Card };
+const AnimatedCard = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>((props, ref) => (
+  <animated.div ref={ref} {...props} />
+));
+AnimatedCard.displayName = "Card";
+export { AnimatedCard as Card };
 
 export function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (

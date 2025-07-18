@@ -4,7 +4,7 @@ import * as React from "react"
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
 import { CheckIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion';
 
 function Checkbox({
   className,

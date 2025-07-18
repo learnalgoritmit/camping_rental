@@ -2,9 +2,9 @@
 import { useState, useEffect } from "react";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
-import { motion } from "framer-motion";
+import { useSpring, animated } from "@react-spring/web";
 import { LuPhone, LuMail } from "react-icons/lu";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useOrder } from '../context/OrderContext';
 import { useTranslations } from 'next-intl';
 
@@ -14,8 +14,6 @@ export default function LandingForm({ onValidityChange }: { onValidityChange?: (
   const [touched, setTouched] = useState({ phone: false, email: false });
   const [apiError, setApiError] = useState<string | null>(null);
   const router = useRouter();
-  const params = useParams();
-  const locale = typeof params.locale === "string" ? params.locale : Array.isArray(params.locale) ? params.locale[0] : "en";
   const { setUser, order } = useOrder();
   const t = useTranslations();
 
@@ -65,9 +63,12 @@ export default function LandingForm({ onValidityChange }: { onValidityChange?: (
     }
   }
 
+  const fadeInUp1 = useSpring({ from: { opacity: 0, y: 20 }, to: { opacity: 1, y: 0 }, delay: 100 });
+  const fadeInUp2 = useSpring({ from: { opacity: 0, y: 20 }, to: { opacity: 1, y: 0 }, delay: 200 });
+
   return (
     <form className="flex flex-col gap-6 w-full max-w-md mx-auto" autoComplete="off" noValidate onSubmit={handleSubmit}>
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="flex flex-col gap-2">
+      <animated.div style={fadeInUp1} className="flex flex-col gap-2">
         <Label htmlFor="phone" className="font-medium text-gray-800 flex items-center gap-2">
           <LuPhone className="inline-block" /> {t('label.phone')}
         </Label>
@@ -91,12 +92,12 @@ export default function LandingForm({ onValidityChange }: { onValidityChange?: (
           />
         </div>
         {touched.phone && !phoneValid && (
-          <motion.span id="phone-error" className="text-red-500 text-xs mt-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <animated.span id="phone-error" className="text-red-500 text-xs mt-1" style={{ opacity: 0 }}>
             {t('error.invalidPhone')}
-          </motion.span>
+          </animated.span>
         )}
-      </motion.div>
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="flex flex-col gap-2">
+      </animated.div>
+      <animated.div style={fadeInUp2} className="flex flex-col gap-2">
         <Label htmlFor="email" className="font-medium text-gray-800 flex items-center gap-2">
           <LuMail className="inline-block" /> {t('label.email')}
         </Label>
@@ -120,11 +121,11 @@ export default function LandingForm({ onValidityChange }: { onValidityChange?: (
           />
         </div>
         {touched.email && !emailValid && (
-          <motion.span id="email-error" className="text-red-500 text-xs mt-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <animated.span id="email-error" className="text-red-500 text-xs mt-1" style={{ opacity: 0 }}>
             {t('error.invalidEmail')}
-          </motion.span>
+          </animated.span>
         )}
-      </motion.div>
+      </animated.div>
       <button
         type="submit"
         disabled={!formValid}
